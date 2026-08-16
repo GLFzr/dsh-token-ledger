@@ -1,0 +1,32 @@
+{
+  "name": "dsh-token-ledger",
+  "version": "0.1.0",
+  "description": "Self-recorded token ledger for DSH: the host folds every request's provider-reported usage (uncached input / output / cache-read / cache-write) from session events into an append-only JSONL ledger on disk, and the web client shows a 用量 page (per-request stacked bars, hourly/daily/turn aggregation) next to the conversation trajectory. Pure local accounting — zero LLM calls, zero prompt injection.",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib/**/*.js",
+    "cordis.patch.yml",
+    "README.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GLFzr/dsh-token-ledger.git"
+  },
+  "homepage": "https://github.com/GLFzr/dsh-token-ledger",
+  "author": "GLFzr",
+  "license": "MIT",
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web"
+    }
+  }
+}

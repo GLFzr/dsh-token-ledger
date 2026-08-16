@@ -1,0 +1,7 @@
+# dsh-token-ledger bundle patch: inserts the dual-face plugin row into the
+# web profile roster. The host half (exports ".") runs in the DSH host
+# process (the /token-ledger routes), and the `dsh.client` declaration in
+# package.json makes the browser half (exports "./client") load in the GUI.
+- insert:
+    - id: token-ledger
+      name: 'dsh-token-ledger'
